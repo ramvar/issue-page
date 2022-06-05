@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <title>Welcome to Update Page!! </title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Issue Updation</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row">
+                Choose Your Outstanding Issue from the below
+            </div>
+            <br></br>
+            <div class="row">
+                <form method="POST" action={{url_for('updateissue')}}>
+                <SELECT name="updname" style="font-family:verdana">
+                {% for j in upd %}
+                <OPTION value="{{j[0]}}">{{j[0]}}</OPTION>
+                 {% endfor %}
+                </SELECT>
+                <br></br>
+                <textarea name="updissue" placeholder="Enter the Resolution"></textarea>
+                <input type="Submit" name="submit-button" value = "Update">
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <title>Login Issue Page</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Login Issue Page</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row">
+                <form method="POST" action={{url_for('resolution')}}>
+                <label>Choose your Issue from the below </label>
+                <br></br>
+                <SELECT name="issuename" style="font-family:verdana">
+                {% for j in issues %}
+            	<OPTION value={{j[0]}}>{{j[0]}}</OPTION>
+                {% endfor %}
+                </SELECT>
+                <input type="submit" name="submit-button" value = "Show">
+                <br></br>
+                <br></br>
+                <label for="confirm">Oops!!. I could not find my Issue in the above list </label>
+                <br></br>
+                <textarea name="newissue" placeholder="Enter your Issue"></textarea>
+                <input type="submit" name="submit-button" value = "Post My Issue">
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+</html>
+

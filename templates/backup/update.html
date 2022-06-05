@@ -1,0 +1,16 @@
+<p style="font-family:verdana">
+<form method="POST" action={{url_for('updateissue')}}>
+<h1> Welcome to Update Page!! <h1>
+<br></br>
+<br></br>
+<label>Choose Your Outstanding Issue from the below </label>
+<br></br>
+<SELECT name="updname" style="font-family:verdana">
+{% for j in upd %}
+	<OPTION value={{j[0]}}>{{j[0]}}</OPTION>
+{% endfor %}
+</SELECT>
+<br></br>
+<textarea name="updissue" placeholder="Enter the Resolution"></textarea>
+<input type="Submit" name="submit-button" value = "Update">
+<br></br>

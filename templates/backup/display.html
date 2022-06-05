@@ -1,0 +1,30 @@
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+
+<p style="font-family:verdana">
+<form method="POST" action={{url_for('resolution')}}>
+<h1> Welcome to Issue Page!! <h1>
+<br></br>
+<label>Choose Your Issue from the below </label>
+<br></br>
+<SELECT name="issuename" style="font-family:verdana">
+{% for j in issues %}
+	<OPTION value={{j[0]}}>{{j[0]}}</OPTION>
+{% endfor %}
+</SELECT>
+<input type="submit" name="submit-button" value = "Show">
+<br></br>
+<br></br>
+<label for="confirm">Oops!!. I could not find my Issue in the above list </label>
+<br></br>
+<textarea name="newissue" placeholder="Enter your Issue"></textarea>
+<input type="submit" name="submit-button" value = "Post Issue">
+</form>
+</p>
+</html>
